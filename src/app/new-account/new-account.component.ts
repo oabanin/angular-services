@@ -7,12 +7,12 @@ import {AccountsService} from "../accounts.service";
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
   standalone: true,
-  providers:[LoggingService]
+  // providers:[LoggingService]
 })
 export class NewAccountComponent {
   // @Output() accountAdded = new EventEmitter<{name: string, status: string}>();
 
-  constructor(private loggingService: LoggingService, private accountService: AccountsService)  {
+  constructor( private accountService: AccountsService)  {
   }
 
   onCreateAccount(accountName: string, accountStatus: string) {
@@ -21,6 +21,6 @@ export class NewAccountComponent {
     //   status: accountStatus
     // });
     this.accountService.addAccount(accountName, accountStatus)
-    this.loggingService.logStatusChange(accountStatus);
+    // this.loggingService.logStatusChange(accountStatus);
   }
 }
